@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content="#17110c" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="pgtune" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <title>pgtune — оптимизатор конфигурации PostgreSQL</title>
+    <meta
+      name="description"
+      content="Готовая конфигурация PostgreSQL по RAM, CPU, диску и профилю нагрузки: postgresql.conf с пояснениями. Всё в браузере — без API."
+    />
+    <link rel="canonical" href="https://pgtune.dmosk.net/ru/" />
+    <link rel="alternate" hreflang="ru" href="https://pgtune.dmosk.net/ru/" />
+    <link rel="alternate" hreflang="en" href="https://pgtune.dmosk.net/en/" />
+    <link rel="alternate" hreflang="x-default" href="https://pgtune.dmosk.net/en/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pgtune.dmosk.net/ru/" />
+    <meta property="og:title" content="pgtune — оптимизатор конфигурации PostgreSQL" />
+    <meta
+      property="og:description"
+      content="Готовая конфигурация PostgreSQL по RAM, CPU, диску и профилю нагрузки: postgresql.conf с пояснениями. Всё в браузере — без API."
+    />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="og:image" content="https://pgtune.dmosk.net/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&display=optional"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" id="ld-app"></script>
+    <script type="application/ld+json" id="ld-faq"></script>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="topbar">
+        <p class="brand"><a href="https://dmosk.net/">dmosk</a> / pgtune</p>
+        <div class="topbar-actions">
+          <a
+            class="github-link"
+            href="https://github.com/dmosktest/pgtune"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <svg class="github-icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+              />
+            </svg>
+          </a>
+          <a
+            class="telegram-link"
+            href="https://t.me/dmosk"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Telegram"
+            title="Telegram"
+          >
+            <svg class="telegram-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+              />
+            </svg>
+          </a>
+          <details class="lang">
+            <summary class="lang-summary" aria-label="Язык сайта">
+              <img class="lang-flag" src="/flags/1f1f7-1f1fa.png" alt="" width="20" height="20" decoding="async" aria-hidden="true" />
+              <span class="lang-current-name">Русский</span>
+            </summary>
+            <div class="lang-menu" role="list"></div>
+          </details>
+        </div>
+      </div>
+
+      <noscript data-i18n="noscript">Для работы pgtune нужен JavaScript.</noscript>
+
+      <h1 id="heading">Оптимизатор конфигурации PostgreSQL</h1>
+      <p class="lead" id="lead">
+        Укажите железо и профиль нагрузки — получите готовый фрагмент <code>postgresql.conf</code> с пояснениями. Расчёт только в браузере.
+      </p>
+
+      <section class="panel form-panel" aria-labelledby="form-title">
+        <h2 id="form-title" class="panel-title" data-i18n="metaHardwareTitle">Параметры сервера</h2>
+
+        <details class="spoiler collector-spoiler">
+          <summary data-i18n="collectorTitle">Сбор с хоста (скрипт)</summary>
+          <div class="spoiler-body">
+            <p class="hint" data-i18n="collectorLead">Скрипт запускается у вас: читает RAM, CPU и версию PostgreSQL локально и печатает ссылку на pgtune с параметрами. На серверы pgtune ничего не отправляется.</p>
+            <label class="field field-full">
+              <span data-i18n="collectorCurlLabel">Однострочник (Linux / macOS)</span>
+              <div class="collector-row">
+                <code id="collector-curl" class="collector-cmd"></code>
+                <button type="button" class="btn btn-ghost" id="copy-collector-curl" data-i18n="copy">Копировать</button>
+              </div>
+            </label>
+            <label class="field field-full">
+              <span data-i18n="collectorPsLabel">PowerShell (Windows)</span>
+              <div class="collector-row">
+                <code id="collector-ps" class="collector-cmd"></code>
+                <button type="button" class="btn btn-ghost" id="copy-collector-ps" data-i18n="copy">Копировать</button>
+              </div>
+            </label>
+            <div class="actions">
+              <a class="btn btn-ghost" id="download-collect-sh" href="/collect.sh" download="pgtune-collect.sh" data-i18n="collectorDownloadSh">Скачать collect.sh</a>
+              <a class="btn btn-ghost" id="download-collect-ps1" href="/collect.ps1" download="pgtune-collect.ps1" data-i18n="collectorDownloadPs1">Скачать collect.ps1</a>
+            </div>
+          </div>
+        </details>
+
+        <div class="form-grid">
+          <label class="field">
+            <span data-i18n="labelDbVersion">Версия PostgreSQL</span>
+            <select id="db-version"></select>
+          </label>
+          <label class="field">
+            <span data-i18n="labelOs">ОС</span>
+            <select id="os-type">
+              <option value="linux" data-i18n="osLinux">Linux</option>
+              <option value="windows" data-i18n="osWindows">Windows</option>
+              <option value="mac" data-i18n="osMac">macOS</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="labelDbType">Профиль нагрузки</span>
+            <select id="db-type">
+              <option value="web" data-i18n="dbWeb">Web</option>
+              <option value="oltp" data-i18n="dbOltp">OLTP</option>
+              <option value="dw" data-i18n="dbDw">Data warehouse</option>
+              <option value="desktop" data-i18n="dbDesktop">Desktop</option>
+              <option value="mixed" data-i18n="dbMixed">Mixed</option>
+            </select>
+          </label>
+          <label class="field">
+            <span data-i18n="labelHd">Диск</span>
+            <select id="hd-type">
+              <option value="ssd" data-i18n="hdSsd">SSD</option>
+              <option value="nvme" data-i18n="hdNvme">NVMe</option>
+              <option value="san" data-i18n="hdSan">SAN</option>
+              <option value="hdd" data-i18n="hdHdd">HDD</option>
+            </select>
+          </label>
+          <label class="field field-ram">
+            <span data-i18n="labelRam">RAM</span>
+            <div class="ram-row">
+              <input id="ram" type="number" min="1" step="1" value="16" />
+              <select id="ram-unit" aria-label="RAM unit">
+                <option value="MB">MB</option>
+                <option value="GB" selected>GB</option>
+                <option value="TB">TB</option>
+              </select>
+            </div>
+          </label>
+          <label class="field">
+            <span data-i18n="labelCpu">CPU (ядра)</span>
+            <input id="cpu" type="number" min="1" step="1" value="8" data-i18n-placeholder="cpuPlaceholder" placeholder="опционально" />
+          </label>
+          <label class="field">
+            <span data-i18n="labelConnections">max_connections</span>
+            <input id="connections" type="number" min="1" step="1" data-i18n-placeholder="connectionsPlaceholder" placeholder="авто" />
+            <small class="hint" data-i18n="connectionsHint">Пусто — подобрать по профилю и RAM</small>
+          </label>
+          <label class="field">
+            <span data-i18n="labelDbSize">Размер данных vs RAM</span>
+            <select id="db-size">
+              <option value="less_ram" data-i18n="sizeLess">Данные &lt; RAM</option>
+              <option value="mid_ram" data-i18n="sizeMid" selected>≈ 1–3× RAM</option>
+              <option value="greater_ram" data-i18n="sizeGreater">Данные ≫ RAM</option>
+            </select>
+          </label>
+        </div>
+
+        <details class="spoiler">
+          <summary data-i18n="spoilerAdvanced">Дополнительно: пресет, доля RAM, роль, пулёр, пик запросов</summary>
+          <div class="form-grid spoiler-body">
+            <label class="field field-preset">
+              <span data-i18n="labelPreset">Пресет инстанса</span>
+              <select id="instance-preset"></select>
+              <small class="hint" data-i18n="presetHint">Подставит RAM/CPU/диск и долю под PG; платформу managed можно сменить в результате</small>
+            </label>
+            <label class="field">
+              <span data-i18n="labelPgRam">Доля RAM под PostgreSQL</span>
+              <div class="ram-row">
+                <input id="pg-ram-percent" type="range" min="50" max="100" step="5" value="100" />
+                <output id="pg-ram-percent-out" for="pg-ram-percent">100%</output>
+              </div>
+              <small class="hint" data-i18n="pgRamHint">Меньше 100% — если на хосте ещё приложение, Redis, мониторинг или лимит cgroup/Kubernetes</small>
+            </label>
+            <label class="field">
+              <span data-i18n="labelServerRole">Роль сервера</span>
+              <select id="server-role">
+                <option value="standalone" data-i18n="roleStandalone">Standalone</option>
+                <option value="primary" data-i18n="rolePrimary">Primary + streaming replicas</option>
+                <option value="replica" data-i18n="roleReplica">Hot standby replica</option>
+                <option value="primary_cdc" data-i18n="roleCdc">Primary + logical CDC</option>
+                <option value="primary_pitr" data-i18n="rolePitr">Primary + PITR backups</option>
+              </select>
+            </label>
+            <label class="field">
+              <span data-i18n="labelPeakQueries">Пик сложных запросов</span>
+              <div class="ram-row">
+                <input id="peak-queries" type="range" min="1" max="16" step="1" value="2" />
+                <output id="peak-queries-out" for="peak-queries">2</output>
+              </div>
+              <small class="hint" data-i18n="peakQueriesHint">Сколько одновременных тяжёлых операций могут каждая взять work_mem — влияет на риск OOM</small>
+            </label>
+            <label class="field">
+              <span data-i18n="labelPooler">Пулёр соединений</span>
+              <select id="pooler-mode">
+                <option value="none" data-i18n="poolerNone">Без пулёра (прямые клиенты)</option>
+                <option value="transaction" data-i18n="poolerTransaction">PgBouncer / transaction</option>
+                <option value="session" data-i18n="poolerSession">PgBouncer / session</option>
+              </select>
+              <small class="hint" data-i18n="poolerHint">Transaction: max_connections = размер backend-пула; session — умеренный запас под сессии</small>
+            </label>
+          </div>
+        </details>
+
+        <div class="actions">
+          <button type="button" class="btn" id="generate" data-i18n="generate">Сгенерировать</button>
+          <button type="button" class="btn btn-ghost" id="share" data-i18n="share">Поделиться</button>
+          <button type="button" class="btn btn-ghost" id="clear" data-i18n="clear">Сбросить</button>
+        </div>
+        <p id="status" class="status" role="status"></p>
+      </section>
+
+      <section id="result" class="result" hidden>
+        <div class="result-head">
+          <h2 class="panel-title" data-i18n="resultTitle">Результат</h2>
+          <p id="assumed" class="hint"></p>
+        </div>
+
+        <div id="budget-block" class="budget-block" hidden>
+          <h3 data-i18n="budgetTitle">Бюджет памяти</h3>
+          <p id="budget-lead" class="hint"></p>
+          <div class="budget-bar" role="img" aria-label="Memory budget">
+            <span class="budget-seg budget-shared" id="budget-shared"></span>
+            <span class="budget-seg budget-maint" id="budget-maint"></span>
+            <span class="budget-seg budget-conn" id="budget-conn"></span>
+            <span class="budget-seg budget-os" id="budget-os"></span>
+          </div>
+          <ul id="budget-legend" class="budget-legend"></ul>
+          <pre id="hugepages-sysctl" class="conf-out" hidden></pre>
+        </div>
+
+        <div class="export-tabs" role="tablist">
+          <button type="button" class="tab active" data-export="conf" data-i18n="tabConf">postgresql.conf</button>
+          <button type="button" class="tab" data-export="alter" data-i18n="tabAlter">ALTER SYSTEM</button>
+          <button type="button" class="tab" data-export="docker" data-i18n="tabDocker">Docker -c</button>
+          <button type="button" class="tab" data-export="compose" data-i18n="tabCompose">Compose</button>
+          <button type="button" class="tab" data-export="helm" data-i18n="tabHelm">Helm / CNPG</button>
+          <button type="button" class="tab" data-export="migrate" data-i18n="tabMigrate">Migration SQL</button>
+          <button type="button" class="tab" data-export="patroni" data-i18n="tabPatroni">Patroni</button>
+          <button type="button" class="tab" data-export="ansible" data-i18n="tabAnsible">Ansible</button>
+        </div>
+        <label class="field field-managed">
+          <span data-i18n="labelManaged">Целевая платформа</span>
+          <select id="managed-target">
+            <option value="selfhosted" data-i18n="managedSelf">Self-hosted</option>
+            <option value="rds" data-i18n="managedRds">AWS RDS</option>
+            <option value="aurora" data-i18n="managedAurora">AWS Aurora</option>
+            <option value="cloudsql" data-i18n="managedCloudsql">GCP Cloud SQL</option>
+            <option value="azure" data-i18n="managedAzure">Azure Database</option>
+            <option value="yandex" data-i18n="managedYandex">Yandex Managed PG</option>
+          </select>
+        </label>
+        <p id="managed-note" class="hint"></p>
+        <div id="managed-skipped" class="hint" hidden></div>
+
+        <div class="conf-block">
+          <div class="conf-toolbar">
+            <h3 id="export-title" data-i18n="confTitle">postgresql.conf</h3>
+            <div class="conf-actions">
+              <button type="button" class="btn btn-ghost" id="copy-conf" data-i18n="copy">Копировать</button>
+              <button type="button" class="btn btn-ghost" id="download-brief-human" data-i18n="briefHuman">ТЗ для человека</button>
+              <button type="button" class="btn btn-ghost" id="download-brief-agent" data-i18n="briefAgent">ТЗ для ИИ-агента</button>
+            </div>
+          </div>
+          <pre id="conf-out" class="conf-out" tabindex="0"></pre>
+        </div>
+
+        <div class="why-block">
+          <h3 data-i18n="whyTitle">Пояснения к параметрам</h3>
+          <div id="why-list" class="why-list"></div>
+        </div>
+
+        <div id="warnings" class="warnings" hidden></div>
+
+        <div id="diff-block" class="why-block" hidden>
+          <h3 data-i18n="diffTitle">Сравнение с текущим</h3>
+          <p id="diff-summary" class="hint"></p>
+          <div id="diff-risks" class="stats-hints"></div>
+          <div id="diff-list" class="why-list"></div>
+        </div>
+      </section>
+
+      <details class="spoiler panel-spoiler">
+        <summary id="stats-title" data-i18n="statsTitle">Реальная нагрузка (опционально)</summary>
+        <div class="spoiler-body">
+          <p class="hint" data-i18n="statsLead">Скопируйте SQL (bgwriter, опционально pg_stat_statements / pg_stat_io), выполните на сервере и вставьте результат — подсказки и правки посчитаются в браузере.</p>
+          <div class="conf-toolbar">
+            <h3 data-i18n="statsSqlTitle">SQL для сбора</h3>
+            <button type="button" class="btn btn-ghost" id="copy-stats-sql" data-i18n="copy">Копировать</button>
+          </div>
+          <pre id="stats-sql" class="conf-out stats-sql" tabindex="0"></pre>
+          <label class="field field-full">
+            <span data-i18n="statsPasteLabel">Результат запроса</span>
+            <textarea id="stats-paste" rows="6" data-i18n-placeholder="statsPastePlaceholder" placeholder="metric | value …"></textarea>
+          </label>
+          <div class="actions">
+            <button type="button" class="btn" id="apply-stats" data-i18n="statsApply">Применить подсказки</button>
+          </div>
+          <div id="stats-hints" class="stats-hints" hidden></div>
+        </div>
+      </details>
+
+      <details class="spoiler panel-spoiler">
+        <summary id="current-title" data-i18n="currentTitle">Текущий конфиг (опционально)</summary>
+        <div class="spoiler-body">
+          <p class="hint" data-i18n="currentLead">Вставьте фрагмент postgresql.conf или вывод SHOW ALL — сравним с рекомендацией и покажем риски.</p>
+          <label class="field field-full">
+            <span data-i18n="currentPasteLabel">Конфиг / SHOW ALL</span>
+            <textarea id="current-paste" rows="8" data-i18n-placeholder="currentPastePlaceholder" placeholder="shared_buffers = 128MB …"></textarea>
+          </label>
+          <div class="actions">
+            <button type="button" class="btn" id="analyze-current" data-i18n="currentAnalyze">Сравнить с рекомендацией</button>
+          </div>
+        </div>
+      </details>
+
+      <article class="seo" id="seo-root"></article>
+
+      <footer class="site-foot">
+        <p>
+          <span data-i18n="footVersion">pgtune</span>
+          <span id="app-version"></span>
+          ·
+          <a href="https://github.com/dmosktest/pgtune/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" data-i18n="footLicense">MIT</a>
+          ·
+          <span data-i18n="footLocales">37 языков</span>
+          ·
+          <a href="https://github.com/dmosktest/pgtune" target="_blank" rel="noopener noreferrer" data-i18n="footSource">Исходники</a>
+          ·
+          <a href="https://t.me/dmosk" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </p>
+      </footer>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
